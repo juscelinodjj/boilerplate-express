@@ -1,7 +1,11 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 console.log('Hello World');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/', function (req, res, next) {
   var method = req.method;
